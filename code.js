@@ -7,7 +7,7 @@ do {
 do {
 
   var firstNumber = parseInt(prompt("Quel est le premier nombre ?"));
-  console.log(typeof firstNumber);
+
 } while (isNaN(firstNumber));
 
 do {
@@ -16,7 +16,46 @@ do {
 
 } while (isNaN(secondNumber));
 
+var resultat;
+
+switch (choice) {
+  case 1:
+    resultat = addition(firstNumber, secondNumber);
+    break;
+
+  case 2:
+    resultat = multiplication(firstNumber, secondNumber);
+    break;
+
+  case 3:
+    resultat = soustraction(firstNumber, secondNumber);
+    break;
+
+  case 4:
+    resultat = division(firstNumber, secondNumber);
+    break;
+
+  default:
+    alert("Une erreur est survenue.");
+    break;
+}
+
+alert(`Le resultat est ${resultat} !`);
+
 
 function addition(nombreA, nombreB) {
-  return nombreA + nombreB
+  return nombreA + nombreB;
+}
+function soustraction(nombreA, nombreB) {
+  return nombreA - nombreB;
+}
+function multiplication(nombreA, nombreB) {
+  return nombreA * nombreB;
+}
+function division(nombreA, nombreB) {
+  if (nombreB === 0) {
+    alert("La division par 0 est impossible.");
+  } else {
+    return nombreA / nombreB;
+  }
 }
